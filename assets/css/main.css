@@ -3591,3 +3591,42 @@ img.virufy-image {
 #join-btn-div {
 	margin-top: 3.5em;
 }
+
+#google_translate_element{
+/*
+	-moz-appearance: none;
+ 	-webkit-appearance: none;
+ 	-ms-appearance: none;
+ 	appearance: none;
+ 	background: #6cc091;
+ 	border-radius: 10px;
+ 	border: none;
+ 	border: solid 2px #8dcca9;
+ 	color: #000000;
+ 	display: block;
+ 	outline: 0;
+ 	padding: 0 1em;
+ 	text-decoration: none;
+	*/
+	background: none;
+ 	width: 30%;
+ }
+
+#country{
+	 background: transparent !important;
+	 color: #9a9a9a;
+	 border-width: thin;
+	 width: 40%;
+ }
+
+ #age{
+	 color: #9a9a9a;
+	 border-style: solid;
+	 border-color: #6cc091;
+	 border-radius: 10px;
+	 border-width: thin;
+ }
+
+ ::placeholder {
+	 color: #9a9a9a !important;
+ }
