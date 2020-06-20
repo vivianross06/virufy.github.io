@@ -95,7 +95,8 @@
 				</div>
 				<!--Consent Question -->
 				<div class="form-group">
-						<label for="consent">Has the patient given consent for participating in this research?<span class="is-required">*</span></label>
+						<label for="consent">Do you consent to participating in this research?<span class="is-required">*</span></label>
+						<!-- Add consent form here -->
 				</div>
 				<div class="form-check form-check-inline" style="margin-left: 5px">
             <input class="form-check-input"type="radio" name="consent" id="consent_yes" value="yes">
@@ -116,16 +117,33 @@
 												<label class="form-check-label" for="condition_positive" style="margin-left: 3px">Positive</label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
-											<input class="form-check-input" type="radio" name="condition" id="condition_negative" value="negative">
+												<input class="form-check-input" type="radio" name="condition" id="condition_negative" value="negative">
 												<label class="form-check-label" for="condition_negative" style="margin-left: 3px">Negative</label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
-											<input class="form-check-input" type="radio" name="condition" id="condition_not-tested" value="not-tested">
-												<label class="form-check-label" for="condition_not-tested" style="margin-left: 3px">Not Tested</label>
+												<input class="form-check-input" type="radio" name="condition" id="condition_pending" value="pending">
+												<label class="form-check-label" for="condition_pending" style="margin-left: 3px">Result pending</label>
 									</div>
 				</div>
 				<br/>
 
+				<!-- PCR Test -->
+				<div class="form-group">
+						<label for="pcr-test">How long ago were you tested?</label>
+									<div class="form-check form-check-inline" style="margin-left: 5px">
+												<input class="form-check-input" type="radio" name="test" id="pcr-test-15-days" value="15-days">
+												<label class="form-check-label" for="pcr-test-15-days" style="margin-left: 3px">Within the last 15 days</label>
+									</div>
+									<div class="form-check form-check-inline" style="margin-left: 5px">
+												<input class="form-check-input" type="radio" name="test" id="pcr-test-month" value="month">
+												<label class="form-check-label" for="pcr-test-month" style="margin-left: 3px">Within the last month</label>
+									</div>
+									<div class="form-check form-check-inline" style="margin-left: 5px">
+												<input class="form-check-input" type="radio" name="test" id="pcr-test-greater-than-month" value="greater-than-month">
+												<label class="form-check-label" for="pcr-test-greater-than-month" style="margin-left: 3px">Longer than 1 month ago</label>
+									</div>
+				</div>
+				<br/>
 
 				<!-- Break
 				<div class="row uniform">
@@ -152,7 +170,7 @@
 
 				<div class="row uniform">
 					<div id="cough">
-						<p id="cough-statement">Please record cough for 10 seconds</p>
+						<p id="cough-statement">Please record cough for 15 seconds</p>
 						<i class="fa fa-question-circle fa-3x" onclick="show_instructions()"></i>
 						<button id="recordButton">Record</button>
 						<button id="pauseButton" disabled>Pause</button>
@@ -216,7 +234,7 @@
 
 				<!-- Smoker/Nonsmoker -->
 				<div class="12u 12u$(small)">
-						<label></span>Is the patient a smoker?<span class="is-required">*</span></label>
+						<label></span>Have you smoked regularly within the last ten years?<span class="is-required">*</span></label>
 				</div>
 
 				<div class="12u 12u$(small)" style="margin-left: 5px">
@@ -233,7 +251,7 @@
 				<!-- Break -->
 				<div class="row uniform">
 					<div class="6u 12u$(small)">
-						<label></span>Patient Reported Symptoms<span class="is-required">*</span><br><br>
+						<label></span>Your Symptoms<span class="is-required">*</span><br><br>
 
 							<input type="checkbox" id="roundtrip1" name="reported_symptoms" value="Fever, chills, or sweating">
 							<label for="roundtrip1">Fever, chills, or sweating</label>
@@ -264,7 +282,19 @@
 							<label for="roundtrip8">Loss of smell</label>
 							<br>
 
-							<input type="checkbox" id="roundtrip9" name="reported_symptoms" value="None">
+							<input type="checkbox" id="roundtrip9" name="reported_symptoms" value="Vomiting or diarrhea">
+							<label for="roundtrip7">Vomiting or Diarrhea</label>
+							<br>
+
+							<input type="checkbox" id="roundtrip10" name="reported_symptoms" value="Tightness in chest">
+							<label for="roundtrip7">Tightness in chest</label>
+							<br>
+
+							<input type="checkbox" id="roundtrip11" name="reported_symptoms" value="Headaches">
+							<label for="roundtrip8">Headaches</label>
+							<br>
+
+							<input type="checkbox" id="roundtrip12" name="reported_symptoms" value="None">
 							<label for="roundtrip9">None</label>
 
 					</div>
@@ -289,7 +319,7 @@
 
 						<input type="checkbox" id="roundtrip04" name="medical_history"
 							value="Disease or conditions that make it harder to cough">
-						<label for="roundtrip04">Disease or conditions that make it harder to cough</label>
+						<label for="roundtrip04">Disease or conditions that affect cough</label>
 						<br>
 
 						<input type="checkbox" id="roundtrip09" name="medical_history" value="Congestive heart failure">
@@ -301,7 +331,12 @@
 						<label for="roundtrip07">Extreme obesity</label>
 						<br>
 
-						<input type="checkbox" id="roundtrip08" name="medical_history" value="None">
+						<input type="checkbox" id="roundtrip08" name="medical_history" value="Cough due to other medical conditions">
+						<label for="roundtrip01">Cough due to other medical conditions</label>
+						<br>
+
+
+						<input type="checkbox" id="roundtrip09" name="medical_history" value="None">
 						<label for="roundtrip08">None</label>
 
 					</div>
