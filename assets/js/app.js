@@ -160,6 +160,7 @@ function createDownloadLink(blob) {
   upload.href = "#";
   upload.innerHTML = "Upload";
 
+  /*
   submit_btn.addEventListener("click", function (event) {
     // var xhr = new XMLHttpRequest();
     // xhr.onload = function (e) {
@@ -177,7 +178,9 @@ function createDownloadLink(blob) {
     // xhr.setRequestHeader("Content-Type", "multipart/form-data");
     // xhr.send(fd);
 
-    fetch("http://139.59.0.87:3000/add_user", {
+    // const url = "http://139.59.0.87:3000/add_user";
+    const url = "http://localhost:8899/";
+    fetch(url, {
       method: "POST",
       body: fd,
     }).then(function (response) {
@@ -188,6 +191,7 @@ function createDownloadLink(blob) {
       console.log(error)
     })
   });
+  */
 
   li.appendChild(document.createTextNode(" ")); //add a space in between
   li.appendChild(upload); //add the upload link to li
