@@ -3635,3 +3635,15 @@ img.virufy-image {
 #recordingsList li {
 	list-style: none;
 }
+
+img.home_logos{
+	vertical-align: middle;
+	width: 40%;
+}
+
+@media screen and (max-width: 600px) {
+	img.home_logos{
+		vertical-align: middle;
+		width: 100%;
+	}
+}
