@@ -410,12 +410,6 @@ async function uploadAudio () {
 			if (blob_arr.length > 0) {
 				formdata.append("cough_audio", blob_arr[0], "cough.wav");
 			}
-			if (blob_arr.length > 1) {
-				formdata.append("breath_audio", blob_arr[1], "breath.wav");
-			}
-      // formdata.append("file", audioBlob)
-      // if (filename)
-      //  formdata.append("filename", filename)
       // formdata.append("test1", "--test1--")
       const res = await (await fetch(url, { method: 'POST', body: formdata })).json()
       console.log(res)

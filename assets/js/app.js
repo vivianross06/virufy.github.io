@@ -19,6 +19,11 @@ stopButton.addEventListener("click", stopRecording);
 pauseButton.addEventListener("click", pauseRecording);
 
 function startRecording() {
+  // record only 1 file
+  blob_arr = [];
+  recordingsList.innerHTML = "";
+
+
   console.log("recordButton clicked");
 
   /*
@@ -154,47 +159,6 @@ function createDownloadLink(blob) {
 
   //add the save to disk link to li
   li.appendChild(link);
-
-  //upload link
-  var upload = document.createElement("a");
-  upload.href = "#";
-  upload.innerHTML = "Upload";
-
-  /*
-  submit_btn.addEventListener("click", function (event) {
-    // var xhr = new XMLHttpRequest();
-    // xhr.onload = function (e) {
-    //   if (this.readyState === 4) {
-    //     console.log("Server returned: ", e.target.responseText);
-    //   }
-    // };
-    event.preventDefault();
-
-    var fd = new FormData(form);
-    fd.append("cough_audio", blob_arr[0], filename + ".wav");
-    fd.append("breath_audio", blob_arr[1], filename + ".wav");
-
-    // xhr.open("POST", "http://localhost:3000/add_user", true);
-    // xhr.setRequestHeader("Content-Type", "multipart/form-data");
-    // xhr.send(fd);
-
-    // const url = "http://139.59.0.87:3000/add_user";
-    const url = "http://localhost:8899/";
-    fetch(url, {
-      method: "POST",
-      body: fd,
-    }).then(function (response) {
-      return response.text();
-    }).then(function (text) {
-      console.log(text)
-    }).catch(function (error) {
-      console.log(error)
-    })
-  });
-  */
-
-  li.appendChild(document.createTextNode(" ")); //add a space in between
-  li.appendChild(upload); //add the upload link to li
 
   //add the li element to the ol
   recordingsList.appendChild(li);

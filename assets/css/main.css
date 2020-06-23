@@ -3630,3 +3630,8 @@ img.virufy-image {
  ::placeholder {
 	 color: #9a9a9a !important;
  }
+
+/* for app.html */
+#recordingsList li {
+	list-style: none;
+}
