@@ -93,7 +93,13 @@
 				<div class="is-required">
 					<p>Required question <span class="is-required">*</span></p>
 				</div>
+<<<<<<< HEAD
 
+=======
+				<div class="is-required">
+					<p><button id="resetbtn">reset userid</button>
+				</div>
+>>>>>>> add localStorage
 				<!--Consent Question -->
 				<div class="form-group">
 						<label for="consent">Do you consent to participating in this research?<span class="is-required">*</span></label>
@@ -418,8 +424,12 @@ const sleep = async (msec) => new Promise((resolve) => setTimeout(resolve, msec)
 
 function resetUserID () {
 	localStorage.removeItem("virufy-userid");
+<<<<<<< HEAD
 	//alert("reset userid");
 	localStorage.removeItem("virufy-age");
+=======
+	alert("reset userid");
+>>>>>>> add localStorage
 };
 function initFormData () {
 	if (localStorage.getItem("virufy-age")) {
@@ -427,7 +437,11 @@ function initFormData () {
 	}
 };
 
+<<<<<<< HEAD
 //resetbtn.onclick = () => resetUserID();
+=======
+resetbtn.onclick = () => resetUserID();
+>>>>>>> add localStorage
 window.onload = () => {
 	initFormData();
 };
@@ -442,9 +456,15 @@ async function uploadAudio () {
 				formdata.append("cough_audio", blob_arr[0], "cough.wav");
 			}
 
+<<<<<<< HEAD
 			if (age.value != localStorage.getItem("virufy-age")) {
 				 resetUserID();
 			}
+=======
+			// if (age.value != localStorage.getItem("virufy-age")) {
+			//	 resetUserID();
+			// }
+>>>>>>> add localStorage
 			let userid = localStorage.getItem("virufy-userid");
 			if (!userid) {
 				userid = Math.random().toString() + "-" + new Date().getTime();
@@ -454,10 +474,15 @@ async function uploadAudio () {
 				formdata.append("userid", userid);
 			}
 
+<<<<<<< HEAD
 			// save the value of Age
 			if (!localStorage.getItem("virufy-age")){
 				localStorage.setItem("virufy-age", age.value);
 			}
+=======
+			// save the value of age
+			localStorage.setItem("virufy-age", age.value);
+>>>>>>> add localStorage
 
       const res = await (await fetch(url, { method: 'POST', body: formdata })).json()
       console.log(res)
