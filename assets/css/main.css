@@ -3647,3 +3647,15 @@ img.home_logos{
 		width: 100%;
 	}
 }
+
+#consent-form{
+	color: #555;
+	display: block;
+	font-size: 0.9em;
+	font-weight: 600;
+	margin: 0 0 1em 0;
+}
+
+#consent-question{
+	margin: 0 0 0 0;
+}

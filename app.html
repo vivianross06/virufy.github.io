@@ -75,6 +75,7 @@
 	<!-- Main -->
 	<section id="main" class="wrapper">
 		<div class="inner">
+			<p>Note: this app is in alpha</p>
 			<p id="cough-statement">Translate this page:</p>
 						<div id="google_translate_element"></div>
 						<script type="text/javascript">
@@ -102,7 +103,8 @@
 >>>>>>> add localStorage
 				<!--Consent Question -->
 				<div class="form-group">
-						<label for="consent">Do you consent to participating in this research?<span class="is-required">*</span></label>
+						<label for="consent" id=consent-question>Do you consent to participating in this research?<span class="is-required">*</span></label>
+						<p id="consent-form">Click <a href="" target=_blank>here</a> for consent form</p>
 						<!-- Add consent form here -->
 				</div>
 				<div class="form-check form-check-inline" style="margin-left: 5px">
@@ -500,7 +502,8 @@ async function uploadAudio () {
 
 		async function submit_data() {
 			await uploadAudio();
-			const msg = "Thank you for donating your cough!";
+			const msg = "Thank you for donating your cough! Please consider
+			supporting us on Gofundme";
 			swal({
 				title: "Thank You!",
 				text: msg,
