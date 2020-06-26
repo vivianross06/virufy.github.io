@@ -475,13 +475,11 @@ async function uploadAudio () {
 
 		async function submit_data() {
 			await uploadAudio();
-			const msg = "Thank you for donating your cough! Please consider supporting us on GoFundMe"
-			var link=document.createElement("GoFundMe");
-			link.setAttribute("href", https://www.gofundme.com/f/virufyorg);
+			const msg = "Thank you for donating your cough! Please consider supporting us on <a href='https://www.gofundme.com/f/virufyorg'>GoFundMe</a>"
 			swal({
 				title: "Thank You!",
 				text: msg,
-		  	content: link,
+				html: true,
 				button: "Ok",
 			});
 		}
