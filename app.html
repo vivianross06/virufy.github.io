@@ -93,6 +93,7 @@
 				<div class="is-required">
 					<p>Required question <span class="is-required">*</span></p>
 				</div>
+
 				<!--Consent Question -->
 				<div class="form-group">
 						<label for="consent">Do you consent to participating in this research?<span class="is-required">*</span></label>
@@ -133,22 +134,22 @@
 
 				<!-- PCR Test -->
 				<div class="form-group">
-						<label for="pcr-test">How long ago were you tested?</label>
+						<label for="test">How long ago were you tested?</label>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
-												<input class="form-check-input" type="radio" name="test" id="pcr-test-15-days" value="15-days">
-												<label class="form-check-label" for="pcr-test-15-days" style="margin-left: 3px">Within the last 15 days</label>
+												<input class="form-check-input" type="radio" name="test" id="test-15-days" value="15-days">
+												<label class="form-check-label" for="test-15-days" style="margin-left: 3px">Within the last 15 days</label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
-												<input class="form-check-input" type="radio" name="test" id="pcr-test-month" value="month">
-												<label class="form-check-label" for="pcr-test-month" style="margin-left: 3px">Within the last month</label>
+												<input class="form-check-input" type="radio" name="test" id="test-month" value="month">
+												<label class="form-check-label" for="test-month" style="margin-left: 3px">Within the last month</label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
-												<input class="form-check-input" type="radio" name="test" id="pcr-test-greater-than-month" value="greater-than-month">
-												<label class="form-check-label" for="pcr-test-greater-than-month" style="margin-left: 3px">Longer than 1 month ago</label>
+												<input class="form-check-input" type="radio" name="test" id="test-greater-than-month" value="greater-than-month">
+												<label class="form-check-label" for="test-greater-than-month" style="margin-left: 3px">Longer than 1 month ago</label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
-												<input class="form-check-input" type="radio" name="test" id="pcr-test-untested" value="untested">
-												<label class="form-check-label" for="pcr-test-untested" style="margin-left: 3px">Not tested</label>
+												<input class="form-check-input" type="radio" name="test" id="test-untested" value="untested">
+												<label class="form-check-label" for="test-untested" style="margin-left: 3px">Not tested</label>
 									</div>
 				</div>
 				<br/>
@@ -354,12 +355,18 @@
 				<!-- Break -->
 				<div class="row uniform"><br>
 					<!-- Break -->
+
 					<div class="12u$">
 						<ul class="actions">
 							<li><input type="button" value="Submit" id="submit" onclick="submit_data()" /></li>
 							<li><input type="reset" value="Reset" /></li>
 						</ul>
 					</div>
+					<!--
+					<div class="is-required">
+						<p><button id="resetbtn">new user</button>
+					</div>
+				-->
 				</div>
 			</form>
 			<hr />
@@ -409,6 +416,22 @@
 
 const sleep = async (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
+function resetUserID () {
+	localStorage.removeItem("virufy-userid");
+	//alert("reset userid");
+	localStorage.removeItem("virufy-age");
+};
+function initFormData () {
+	if (localStorage.getItem("virufy-age")) {
+		age.value = localStorage.getItem("virufy-age");
+	}
+};
+
+//resetbtn.onclick = () => resetUserID();
+window.onload = () => {
+	initFormData();
+};
+
 async function uploadAudio () {
   for (;;) {
     try {
@@ -418,7 +441,24 @@ async function uploadAudio () {
 			if (blob_arr.length > 0) {
 				formdata.append("cough_audio", blob_arr[0], "cough.wav");
 			}
-      // formdata.append("test1", "--test1--")
+
+			if (age.value != localStorage.getItem("virufy-age")) {
+				 resetUserID();
+			}
+			let userid = localStorage.getItem("virufy-userid");
+			if (!userid) {
+				userid = Math.random().toString() + "-" + new Date().getTime();
+				formdata.append("userid", userid);
+				localStorage.setItem("virufy-userid", userid);
+			} else {
+				formdata.append("userid", userid);
+			}
+
+			// save the value of Age
+			if (!localStorage.getItem("virufy-age")){
+				localStorage.setItem("virufy-age", age.value);
+			}
+
       const res = await (await fetch(url, { method: 'POST', body: formdata })).json()
       console.log(res)
       if (res.res == 'ok') {
