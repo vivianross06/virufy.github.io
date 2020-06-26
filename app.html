@@ -167,10 +167,10 @@
 				<div class="row uniform">
 					<div id="cough">
 						<p id="cough-statement">Please record cough for 15 seconds</p>
-						<i class="fa fa-question-circle fa-3x" onclick="show_instructions()"></i>
 						<button id="recordButton">Record</button>
 						<button id="pauseButton" disabled>Pause</button>
 						<button id="stopButton" disabled>Stop</button>
+						<i class="fa fa-question-circle fa-3x" onclick="show_instructions()"></i>
 					</div>
 				</div>
 				<div id="formats">Format: start recording to see sample rate</div>
@@ -405,7 +405,7 @@ async function uploadAudio () {
 				text: "<img src='images/instructions.jpg' alt='instructions' class='modal-instructions'/>",
 				html: true,
 				confirmButtonClass: "button",
-				confirmButtonText: "Let's, do this!",
+				confirmButtonText: "Let's do this!",
 			});
 		}
 
