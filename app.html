@@ -390,15 +390,16 @@ async function uploadAudio () {
 
 		async function submit_data() {
 			await uploadAudio();
-			const msg = "Thank you for donating your cough! Please consider supporting us on <a href='https://www.gofundme.com/f/virufyorg'>GoFundMe</a>"
+			const msg = "Thank you for donating your cough!"
 			swal({
 				title: "Thank You!",
 				text: msg,
 				html: true,
-				button: "Go to feedback form",
+				confirmButtonClass: "button",
+				confirmButtonText: "Go to feedback form",
 			},
 			function() {
-				window.location.href="https://docs.google.com/forms/d/e/1FAIpQLSeeBUamAtibFWrA8LXbQ8H64Xt1IQWzh9BWO-RzUtUgOosRqA/viewform?usp=sf_link";
+				window.location.href="https://forms.gle/zzb9doND2SVQQv11A";
 			});
 		}
 
