@@ -3647,3 +3647,16 @@ img.home_logos{
 		width: 100%;
 	}
 }
+
+img.app_logos{
+	align: middle;
+	vertical-align: middle;
+	width: 40%;
+}
+
+@media screen and (max-width: 600px) {
+	img.app_logos{
+		vertical-align: middle;
+		width: 100%;
+	}
+}
