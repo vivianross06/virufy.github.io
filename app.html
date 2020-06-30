@@ -286,6 +286,7 @@
 						<ul class="actions">
 							<li><input type="button" value="Submit" id="submit" onclick="submit_data()" /></li>
 							<li><input type="reset" value="Reset" /></li>
+							<li><input type="button" value="Feedback" id="feedback" onclick="redirect_to_feedback()" /></li>
 						</ul>
 					</div>
 					<!--
@@ -412,6 +413,10 @@ async function uploadAudio () {
 			function() {
 				window.location.href="https://forms.gle/zzb9doND2SVQQv11A";
 			});
+		}
+
+		async function redirect_to_feedback(){
+			window.location.href="https://forms.gle/zzb9doND2SVQQv11A";
 		}
 
 		function show_instructions() {
