@@ -83,17 +83,6 @@
 			</header>
 		</div>
 	</section>
-	<br>
-	<br>
-	
-	<div class="images" style="text-align: center">
-		<a href=https://gsb-sites.stanford.edu/rebuildsprint/ target="_blank">
-			<img src="images/stanford-rebuild-logo.png" class="app_logos" id="rebuild" alt="Stanford Rebuild">
-		</a>
-		<a href=https://h4r.stanford.edu target="_blank">
-			<img src="images/h4r-logo.png" class="app_logos" id="h4r" alt="H4R">
-		</a>
-	</div>
 
 
 	<!-- Main -->
@@ -121,7 +110,7 @@
 
 				<!--Consent Question -->
 				<div class="form-group">
-						<label for="consent">Do you consent to participating in this research (<a href="consent_form.pdf" target=_blank>link</a>)?<span class="is-required">*</span></label>
+						<label for="consent">Do you consent to participating in this research? (<a href="consent_form.pdf" target=_blank>consent form</a>)<span class="is-required">*</span></label>
 						<!-- Add consent form here -->
 				</div>
 				<div class="form-check form-check-inline" style="margin-left: 5px">
@@ -137,22 +126,22 @@
 				<br/>
 				<!-- Covid Condition -->
 				<div class="form-group">
-						<label for="condition">Please enter your COVID19 test result here</label>
+						<label for="condition">Which of the following best describes you?</label>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="condition" id="condition_positive" value="positive">
-												<label class="form-check-label" for="condition_positive" style="margin-left: 3px">Positive</label>
+												<label class="form-check-label" for="condition_positive" style="margin-left: 3px">I have tested positive for COVID-19</label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="condition" id="condition_negative" value="negative">
-												<label class="form-check-label" for="condition_negative" style="margin-left: 3px">Negative</label>
+												<label class="form-check-label" for="condition_negative" style="margin-left: 3px">I have tested negative for COVID-19</label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="condition" id="condition_pending" value="pending">
-												<label class="form-check-label" for="condition_pending" style="margin-left: 3px">Result pending</label>
+												<label class="form-check-label" for="condition_pending" style="margin-left: 3px">My test result is pending</label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="condition" id="condition_untested" value="pending">
-												<label class="form-check-label" for="condition_untested" style="margin-left: 3px">Not tested</label>
+												<label class="form-check-label" for="condition_untested" style="margin-left: 3px">I have not been tested for COVID-19</label>
 									</div>
 				</div>
 				<br/>
@@ -166,7 +155,7 @@
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="test" id="test-greater-than-15-days" value="greater-than-15-days">
-												<label class="form-check-label" for="test-greater-than-15-days" style="margin-left: 3px">Longer than 15 days ago</label>
+												<label class="form-check-label" for="test-greater-than-15-days" style="margin-left: 3px">More than 15 days ago</label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="test" id="test-untested" value="untested">
@@ -196,19 +185,8 @@
 					</div>
 				</div>
 				<br/>
-				<!-- Gender -->
-				<div class="form-group">
-            <label for="gender">Gender<span class="is-required">*</span></label>
-                  <div class="form-check form-check-inline" style="margin-left: 5px">
-                        <input class="form-check-input" type="radio" name="gender" id="gender_female" value="female">
-                        <label class="form-check-label" for="gender_female" style="margin-left: 3px">Female</label>
-                  </div>
-            			<div class="form-check form-check-inline" style="margin-left: 5px">
-                    	<input class="form-check-input" type="radio" name="gender" id="gender_male" value="male">
-                        <label class="form-check-label" for="gender_male" style="margin-left: 3px">Male</label>
-									</div>
-        </div>
-				<br/>
+
+				<!-- Note: Gender Question was here -->
 
 				<!-- Smoker/Nonsmoker -->
 				<div class="12u 12u$(small)">
@@ -231,16 +209,16 @@
 					<div class="6u 12u$(small)">
 						<label></span>Your Symptoms<br><br>
 
-							<input type="checkbox" id="roundtrip1" name="reported_symptoms1" value="Fever, chills, or sweating">
-							<label for="roundtrip1">Fever, chills, or sweating</label>
+							<input type="checkbox" id="roundtrip1" name="reported_symptoms1" value="New or worsening cough">
+							<label for="roundtrip1">New or worsening cough</label>
 							<br>
 
 							<input type="checkbox" id="roundtrip2" name="reported_symptoms2" value="Shortness of breath">
 							<label for="roundtrip2">Shortness of breath</label>
 
 							<br>
-							<input type="checkbox" id="roundtrip3" name="reported_symptoms3" value="New or worsening cough">
-							<label for="roundtrip3"> New or worsening cough</label>
+							<input type="checkbox" id="roundtrip3" name="reported_symptoms3" value="Fever, chills, or sweating">
+							<label for="roundtrip3"> Fever, chills, or sweating</label>
 							<br>
 
 							<input type="checkbox" id="roundtrip4" name="reported_symptoms4" value="Sore throat">
