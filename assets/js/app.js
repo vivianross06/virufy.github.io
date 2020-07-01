@@ -12,11 +12,13 @@ var audioContext; //audio context to help us record
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
 var pauseButton = document.getElementById("pauseButton");
+var deleteButton = document.getElementById("deleteButton");
 
 //add events to those 2 buttons
 recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
 pauseButton.addEventListener("click", pauseRecording);
+deleteButton.addEventListener("click", deleteRecording);
 
 function startRecording() {
   // record only 1 file
@@ -40,6 +42,7 @@ function startRecording() {
   recordButton.disabled = true;
   stopButton.disabled = false;
   pauseButton.disabled = false;
+  deleteButton.disabled = true;
 
   /*
     	We're using the standard promise based getUserMedia()
@@ -102,6 +105,7 @@ function startRecording() {
       recordButton.disabled = false;
       stopButton.disabled = true;
       pauseButton.disabled = true;
+      deleteButton.disabled = true;
     });
 }
 
@@ -128,6 +132,7 @@ function stopRecording() {
   stopButton.disabled = true;
   recordButton.disabled = false;
   pauseButton.disabled = true;
+  deleteButton.disabled = false;
 
   //reset button just in case the recording is stopped while paused
   pauseButton.innerHTML = "Pause";
@@ -173,6 +178,15 @@ function createDownloadLink(blob) {
 
   //add the li element to the ol
   recordingsList.appendChild(li);
+}
+
+function deleteRecording(){
+  stopButton.disabled = true;
+  recordButton.disabled = false;
+  pauseButton.disabled = true;
+  deleteButton.disabled = false;
+  blob.clear();
+  deleteButton.disabled=true;
 }
 
 // Access the form element...
