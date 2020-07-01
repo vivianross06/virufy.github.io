@@ -181,12 +181,12 @@ function createDownloadLink(blob) {
 }
 
 function deleteRecording(){
+  console.log("deleteButton clicked");
+  blob.clear();
   stopButton.disabled = true;
   recordButton.disabled = false;
   pauseButton.disabled = true;
-  deleteButton.disabled = false;
-  blob.clear();
-  deleteButton.disabled=true;
+  deleteButton.disabled = true;
 }
 
 // Access the form element...
