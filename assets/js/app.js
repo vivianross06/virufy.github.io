@@ -82,13 +82,16 @@ function startRecording() {
 
       console.log("Recording started");
       var counter=11;
-      var countdown=setInterval(function(){
-        document.getElementById("displayTimer").innerHTML=counter-1;
-        console.log(counter);
-        counter--
-        if (counter==0){
-          stopRecording();
-          clearInterval(countdown);
+      isPaused=false;
+      countdown=setInterval(function(){
+        if (!isPaused){
+          document.getElementById("displayTimer").innerHTML=counter-1;
+          console.log(counter);
+          counter--
+          if (counter==0){
+            stopRecording();
+            clearInterval(countdown);
+          }
         }
       }, 1000);
     })
@@ -103,6 +106,7 @@ function startRecording() {
 }
 
 function pauseRecording() {
+  isPaused=true;
   console.log("pauseButton clicked rec.recording=", rec.recording);
   if (rec.recording) {
     //pause
@@ -110,12 +114,14 @@ function pauseRecording() {
     pauseButton.innerHTML = "Resume";
   } else {
     //resume
+    isPaused=false;
     rec.record();
     pauseButton.innerHTML = "Pause";
   }
 }
 
 function stopRecording() {
+  clearInterval(countdown);
   console.log("stopButton clicked");
 
   //disable the stop button, enable the record too allow for new recordings
