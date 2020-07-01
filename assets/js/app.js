@@ -124,6 +124,8 @@ function stopRecording() {
   clearInterval(countdown);
   console.log("stopButton clicked");
 
+  recordButton.innerHTML = "Retry";
+
   //disable the stop button, enable the record too allow for new recordings
   stopButton.disabled = true;
   recordButton.disabled = false;
