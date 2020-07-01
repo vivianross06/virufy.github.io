@@ -3647,3 +3647,8 @@ img.home_logos{
 		width: 100%;
 	}
 }
+
+#displayTimer{
+	color: #555;
+	font-size: 200%;
+}

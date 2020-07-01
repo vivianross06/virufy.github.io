@@ -81,6 +81,16 @@ function startRecording() {
       rec.record();
 
       console.log("Recording started");
+      var counter=11;
+      var countdown=setInterval(function(){
+        document.getElementById("displayTimer").innerHTML=counter-1;
+        console.log(counter);
+        counter--
+        if (counter==0){
+          stopRecording();
+          clearInterval(countdown);
+        }
+      }, 1000);
     })
     .catch(function (err) {
       //enable the record button if getUserMedia() fails
