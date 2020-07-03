@@ -3445,6 +3445,13 @@ button:disabled,
 	}
 }
 
+/* Button to go to form, in mobile */
+@media only screen and (min-width: 736px) {
+	.show-mobile{
+		display: none;
+	}
+}
+
 /* Footer */
 
 #footer {
