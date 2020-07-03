@@ -262,7 +262,7 @@
 							<br>
 
 							<input type="checkbox" id="roundtrip9" name="reported_symptoms9" value="Vomiting or diarrhea">
-							<label for="roundtrip9">Vomiting or Diarrhea</label>
+							<label for="roundtrip9">Vomiting or diarrhea</label>
 							<br>
 
 							<input type="checkbox" id="roundtrip10" name="reported_symptoms10" value="Tightness in chest">
@@ -417,13 +417,13 @@ async function uploadAudio () {
 		}
 
 		async function redirect_to_feedback(){
-			window.location.href="https://forms.gle/zzb9doND2SVQQv11A";
+			window.open("https://forms.gle/zzb9doND2SVQQv11A");
 		}
 
 		function show_instructions() {
 			swal({
 				title: "Instructions - Record Cough",
-				text: "<p>(1) Wear a mask.<br>(2) Press Record.<br>(3) Cough for 10 seconds. Force a cough if you do not have one.<br>(4) Recording will stop after 10 seconds.<br>(5) Sanitize your phone or surrounding area and hands to prevent infection to others.</p>",
+				text: "<p>(1) Press Record.<br>(2) Cough for 10 seconds. Force a cough if you do not have one.<br>(3) Recording will stop after 10 seconds.<br>(4) Sanitize your phone or surrounding area and hands to prevent infection to others.</p>",
 				html: true,
 				confirmButtonClass: "button",
 				confirmButtonText: "Let's do this!",
