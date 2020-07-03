@@ -124,12 +124,12 @@
 						<!-- Add consent form here -->
 				</div>
 				<div class="form-check form-check-inline" style="margin-left: 5px">
-            <input class="form-check-input"type="radio" name="consent" id="consent_yes" value="yes">
+            <input class="form-check-input"type="radio" name="consent" id="consent_yes" value="yes" required>
             <label class="form-check-label" for="consent_yes" style="margin-left: 3px">Yes</label>
         </div>
 
 				<div class="form-check form-check-inline" style="margin-left: 5px">
-            <input class="form-check-input" type="radio" name="consent" id="consent_no" value="no">
+            <input class="form-check-input" type="radio" name="consent" id="consent_no" value="no" required>
             <label class="form-check-label" for="consent_no" style="margin-left: 3px">No</label>
         </div>
 
@@ -368,6 +368,8 @@ async function uploadAudio () {
 			const formdata = new FormData(myForm)
 			if (blob_arr.length > 0) {
 				formdata.append("cough_audio", blob_arr[0], "cough.wav");
+			} else{
+				throw (e);
 			}
 
 			if (age.value != localStorage.getItem("virufy-age")) {
@@ -394,8 +396,8 @@ async function uploadAudio () {
       }
 			alert("upload error, retry? (" + res.res + ") tap to retry");
     } catch (e) {
-			alert("upload error, retry? (" + e + ") tap to retry");
-			break;
+			alert("Please submit cough.");
+			return false;
     }
 		await sleep(500);
   }
@@ -403,6 +405,9 @@ async function uploadAudio () {
 
 		async function submit_data() {
 			await uploadAudio();
+			if (uploadAudio()==false){
+				return;
+			}
 			const msg = "Thank you for donating your cough!"
 			swal({
 				title: "Thank You!",
