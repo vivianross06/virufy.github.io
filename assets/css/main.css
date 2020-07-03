@@ -2446,10 +2446,6 @@ input[type="radio"] + label:before {
 	width: 100%;
 }
 
-#detect-now-logo {
-	width: 110px;
-}
-
 /* List */
 
 ol {
