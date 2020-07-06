@@ -233,56 +233,67 @@
 
 				<br/>
 				<!-- Break -->
-				<div class="row uniform">
-					<div class="6u 12u$(small)">
-						<label></span>Which of the symptoms below do you currently have?<br><br>
+                <div id="sym-checkbox-wrapper" class="row uniform">
+                    <div class="6u 12u$(small)">
+                        <label>Which of the symptoms below do you currently have?</label>
 
-							<input type="checkbox" id="roundtrip1" name="reported_symptoms1" value="New or worsening cough">
-							<label for="roundtrip1">New or worsening cough</label>
-							<br>
+                        <input class="sym-checkbox" type="checkbox" id="roundtrip1" name="reported_symptoms1"
+                               value="New or worsening cough">
+                        <label for="roundtrip1">New or worsening cough</label>
+                        <br>
 
-							<input type="checkbox" id="roundtrip2" name="reported_symptoms2" value="Shortness of breath">
-							<label for="roundtrip2">Shortness of breath</label>
+                        <input class="sym-checkbox" type="checkbox" id="roundtrip2" name="reported_symptoms2"
+                               value="Shortness of breath">
+                        <label for="roundtrip2">Shortness of breath</label>
 
-							<br>
-							<input type="checkbox" id="roundtrip3" name="reported_symptoms3" value="Fever, chills, or sweating">
-							<label for="roundtrip3"> Fever, chills, or sweating</label>
-							<br>
+                        <br>
+                        <input class="sym-checkbox" type="checkbox" id="roundtrip3" name="reported_symptoms3"
+                               value="Fever, chills, or sweating">
+                        <label for="roundtrip3"> Fever, chills, or sweating</label>
+                        <br>
 
-							<input type="checkbox" id="roundtrip4" name="reported_symptoms4" value="Sore throat">
-							<label for="roundtrip4">Sore throat</label>
-							<br>
+                        <input class="sym-checkbox" type="checkbox" id="roundtrip4" name="reported_symptoms4"
+                               value="Sore throat">
+                        <label for="roundtrip4">Sore throat</label>
+                        <br>
 
-							<input type="checkbox" id="roundtrip5" name="reported_symptoms5" value="Body aches">
-							<label for="roundtrip5">Body aches</label>
+                        <input class="sym-checkbox" type="checkbox" id="roundtrip5" name="reported_symptoms5"
+                               value="Body aches">
+                        <label for="roundtrip5">Body aches</label>
 
-							<br>
+                        <br>
 
-							<input type="checkbox" id="roundtrip7" name="reported_symptoms7" value="Loss of taste">
-							<label for="roundtrip7">Loss of taste</label>
-							<br>
+                        <input class="sym-checkbox" type="checkbox" id="roundtrip7" name="reported_symptoms7"
+                               value="Loss of taste">
+                        <label for="roundtrip7">Loss of taste</label>
+                        <br>
 
-							<input type="checkbox" id="roundtrip8" name="reported_symptoms8" value="Loss of smell">
-							<label for="roundtrip8">Loss of smell</label>
-							<br>
+                        <input class="sym-checkbox" type="checkbox" id="roundtrip8" name="reported_symptoms8"
+                               value="Loss of smell">
+                        <label for="roundtrip8">Loss of smell</label>
+                        <br>
 
-							<input type="checkbox" id="roundtrip9" name="reported_symptoms9" value="Vomiting or diarrhea">
-							<label for="roundtrip9">Vomiting or diarrhea</label>
-							<br>
+                        <input class="sym-checkbox" type="checkbox" id="roundtrip9" name="reported_symptoms9"
+                               value="Vomiting or diarrhea">
+                        <label for="roundtrip9">Vomiting or diarrhea</label>
+                        <br>
 
-							<input type="checkbox" id="roundtrip10" name="reported_symptoms10" value="Tightness in chest">
-							<label for="roundtrip10">Tightness in chest</label>
-							<br>
+                        <input class="sym-checkbox" type="checkbox" id="roundtrip10" name="reported_symptoms10"
+                               value="Tightness in chest">
+                        <label for="roundtrip10">Tightness in chest</label>
+                        <br>
 
-							<input type="checkbox" id="roundtrip11" name="reported_symptoms11" value="Headaches">
-							<label for="roundtrip11">Headaches</label>
-							<br>
+                        <input class="sym-checkbox" type="checkbox" id="roundtrip11" name="reported_symptoms11"
+                               value="Headaches">
+                        <label for="roundtrip11">Headaches</label>
+                        <br>
 
-							<input type="checkbox" id="roundtrip12" name="reported_symptoms12" value="None">
-							<label for="roundtrip12">None</label>
+                        <input class="sym-checkbox sym-none" type="checkbox" id="roundtrip12"
+                               name="reported_symptoms12" value="None">
+                        <label for="roundtrip12">None</label>
 
-					</div>
-				</div>
+                    </div>
+                </div>
 				<!-- Break -->
 				<!-- Break -->
 				<div class="row uniform"><br>
@@ -347,7 +358,19 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
 	<script>
 
-const sleep = async (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+        $('#sym-checkbox-wrapper .sym-checkbox').on('change', function () {
+            let $this = $(this);
+            if ($this.prop('checked')) {
+                if ($this.is('.sym-none')) {
+                    $this.siblings().prop('checked', false);
+                } else {
+                    $this.siblings('.sym-none').prop('checked', false);
+                }
+            }
+        });
+
+
+        const sleep = async (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
 function resetUserID () {
 	localStorage.removeItem("virufy-userid");
