@@ -118,6 +118,21 @@
         </div>
 
 				<br/>
+
+				<!-- Cough -->
+				<div class="row uniform">
+					<div id="cough">
+						<p id="cough-statement">Please cough intentionally for 10 seconds. A timer will appear after you hit the record button.</p>
+						<div id="displayTimer"></div>
+						<button id="recordButton">Record</button>
+						<button id="pauseButton" disabled>Pause</button>
+						<button id="stopButton" disabled>Stop</button>
+						<i class="fa fa-question-circle fa-3x" onclick="show_instructions()"></i>
+					</div>
+				</div>
+				<p><strong>Recordings:</strong></p>
+				<ol id="recordingsList"></ol>
+
 				<!-- Covid Condition -->
 				<div class="form-group">
 						<label for="condition">Which of the following best describes you?</label>
@@ -158,18 +173,6 @@
 				</div>
 				<br/>
 
-				<div class="row uniform">
-					<div id="cough">
-						<p id="cough-statement">Please cough intentionally for 10 seconds. A timer will appear after you hit the record button.</p>
-						<button id="recordButton">Record</button>
-						<button id="pauseButton" disabled>Pause</button>
-						<button id="stopButton" disabled>Stop</button>
-						<i class="fa fa-question-circle fa-3x" onclick="show_instructions()"></i>
-					</div>
-				</div>
-				<div id="displayTimer"></div>
-				<p><strong>Recordings:</strong></p>
-				<ol id="recordingsList"></ol>
 
 				<!-- Age Question -->
 				<div class="row uniform">
