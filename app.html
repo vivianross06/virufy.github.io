@@ -122,15 +122,21 @@
 
 				<br/>
 
+				<div>
+					<p id="step">Step 2 - Record cough</p>
+					<p id="disclaimer"> Please cough intentionally for 10 seconds. Force a
+						 cough if you do not have one. A timer will appear after you hit the
+						 record button.
+					 </p>
+
 				<!-- Cough -->
 				<div class="row uniform">
 					<div id="cough">
-						<p id="cough-statement">Please cough intentionally for 10 seconds. A timer will appear after you hit the record button.</p>
 						<div id="displayTimer"></div>
 						<button id="recordButton">Record</button>
 						<button id="pauseButton" disabled>Pause</button>
 						<button id="stopButton" disabled>Stop</button>
-						<i class="fa fa-question-circle fa-3x" onclick="show_instructions()"></i>
+
 					</div>
 				</div>
 				<p><strong>Recordings:</strong></p>
@@ -433,15 +439,6 @@ async function uploadAudio () {
 			window.open("https://forms.gle/zzb9doND2SVQQv11A");
 		}
 
-		function show_instructions() {
-			swal({
-				title: "Instructions - Record Cough",
-				text: "<p>(1) Press Record.<br>(2) Cough for 10 seconds. Force a cough if you do not have one.<br>(3) Recording will stop after 10 seconds.<br>(4) Sanitize your phone or surrounding area and hands to prevent infection to others.</p>",
-				html: true,
-				confirmButtonClass: "button",
-				confirmButtonText: "Let's do this!",
-			});
-		}
 
 		function show_instructions_video() {
 			swal({
