@@ -89,40 +89,23 @@
 	<!-- Main -->
 	<section id="main" class="wrapper">
 		<div class="inner">
+			<!--
 			<div class="scroll">
 				<a class="show-mobile" href="#disclaimer">Go to form</a>
 			</div>
 			<br>
+		-->
 			<p style="color: #444; font-size: 1.3em;">Help us make your smartphone an instant COVID testing kit! Donating
 				your cough will help our AI algorithms learn what COVID sounds like.
-				We are a student-led nonprofit in
-				<a href=https://responselab.stanford.edu/projects.html target=_blank> Stanford's
-				COVID-19 Response Innovation Lab</a> and featured in
-				<a href=https://www.oneyoungworld.com/counsellors target=_blank>One Young World</a>.
-				Your support can benefit hundreds of millions of lives across 190+
-				countries!</p>
+			</p>
 
-			<p id="disclaimer">Note: We are advised by licensed data privacy experts and will anonymize all
-				information and recordings.</p>
-			<p id="cough-statement">Translate this page:</p>
-						<div id="google_translate_element"></div>
-						<script type="text/javascript">
-						function googleTranslateElementInit() {
-							new google.translate.TranslateElement({pageLanguage: 'en',
-							includedLanguages: 'af,en,fr,hi,ja,ne,ur,'},
-							'google_translate_element');
-						}
-						</script>
-						<script type="text/javascript"
-						src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-						</script>
 			<form method="POST" enctype="multipart/form-data" id="myForm">
-				<!-- Break -->
-				<br>
-				<div class="is-required">
-					<p>Required question <span class="is-required">*</span></p>
+				<div>
+					<p id="step">Step 1 - Consent to the study</p>
 				</div>
-
+				<p id="disclaimer">We care about privacy. We are advised by licensed data privacy experts and will anonymize all
+					information and recordings.</p>
+				<br>
 				<!--Consent Question -->
 				<div class="form-group">
 						<label for="consent">Do you consent to participating in this research? (<a href="consent_form.pdf" target=_blank>consent form</a>)<span class="is-required">*</span></label>
@@ -139,6 +122,36 @@
         </div>
 
 				<br/>
+
+				<div>
+					<p id="step">Step 2 - Record cough</p>
+				</div>
+					<p id="disclaimer"> Please cough intentionally for 10 seconds. Force a
+						 cough if you do not have one. A timer will appear after you hit the
+						 record button.
+					</p>
+					<br>
+					
+				<!-- Cough -->
+				<div class="row uniform">
+					<div id="cough">
+						<div id="displayTimer"></div>
+						<button id="recordButton">Record</button>
+						<button id="pauseButton" disabled>Pause</button>
+						<button id="stopButton" disabled>Stop</button>
+
+					</div>
+				</div>
+				<p><strong>Recordings:</strong></p>
+				<ol id="recordingsList"></ol>
+
+
+				<div>
+					<p id="step">Step 3 - Answer questions</p>
+				</div>
+				<p id="disclaimer">Please answer some questions to help our AI understand
+					 your cough.</p>
+				<br>
 				<!-- Covid Condition -->
 				<div class="form-group">
 						<label for="condition">Which of the following best describes you?</label>
@@ -179,19 +192,6 @@
 				</div>
 				<br/>
 
-				<div class="row uniform">
-					<div id="cough">
-						<p id="cough-statement">Please cough intentionally for 10 seconds. A timer will appear after you hit the record button.</p>
-						<button id="recordButton">Record</button>
-						<button id="pauseButton" disabled>Pause</button>
-						<button id="stopButton" disabled>Stop</button>
-						<i class="fa fa-question-circle fa-3x" onclick="show_instructions()"></i>
-					</div>
-				</div>
-				<div id="formats">Format: start recording to see sample rate</div>
-				<div id="displayTimer"></div>
-				<p><strong>Recordings:</strong></p>
-				<ol id="recordingsList"></ol>
 
 				<!-- Age Question -->
 				<div class="row uniform">
@@ -449,15 +449,6 @@ async function uploadAudio () {
 			window.open("https://forms.gle/zzb9doND2SVQQv11A");
 		}
 
-		function show_instructions() {
-			swal({
-				title: "Instructions - Record Cough",
-				text: "<p>(1) Press Record.<br>(2) Cough for 10 seconds. Force a cough if you do not have one.<br>(3) Recording will stop after 10 seconds.<br>(4) Sanitize your phone or surrounding area and hands to prevent infection to others.</p>",
-				html: true,
-				confirmButtonClass: "button",
-				confirmButtonText: "Let's do this!",
-			});
-		}
 
 		function show_instructions_video() {
 			swal({
