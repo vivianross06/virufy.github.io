@@ -21,7 +21,7 @@ pauseButton.addEventListener("click", pauseRecording);
 function startRecording() {
   // record only 1 file
   blob_arr = [];
-  recordingsList.innerHTML = "";
+  recordingsList2.innerHTML = "";
 
 
   console.log("recordButton clicked");
@@ -34,12 +34,13 @@ function startRecording() {
   var constraints = { audio: true, video: false };
 
   /*
-    	Disable the record button until we get a success or fail from getUserMedia()
-	*/
+      Disable the record button until we get a success or fail from getUserMedia()
+  */
 
   recordButton.disabled = true;
   stopButton.disabled = false;
   pauseButton.disabled = false;
+  recordButtonCount.disabled=true;
 
   /*
     	We're using the standard promise based getUserMedia()
@@ -52,6 +53,7 @@ function startRecording() {
       console.log(
         "getUserMedia() success, stream created, initializing Recorder.js ..."
       );
+
 
       /*
 			create an audio context after getUserMedia is called
@@ -99,6 +101,7 @@ function startRecording() {
       recordButton.disabled = false;
       stopButton.disabled = true;
       pauseButton.disabled = true;
+      recordButtonCount.disabled=false;
     });
 }
 
@@ -126,6 +129,7 @@ function stopRecording() {
   stopButton.disabled = true;
   recordButton.disabled = false;
   pauseButton.disabled = true;
+  recordButtonCount.disabled=false;
 
   //reset button just in case the recording is stopped while paused
   pauseButton.innerHTML = "Pause";
@@ -170,7 +174,7 @@ function createDownloadLink(blob) {
   li.appendChild(link);
 
   //add the li element to the ol
-  recordingsList.appendChild(li);
+  recordingsList2.appendChild(li);
 }
 
 // Access the form element...
@@ -191,19 +195,19 @@ form.addEventListener("submit", function (event) {
 
 //Count Record
 
-var recordButton = document.getElementById("recordButtonCount");
-var stopButton = document.getElementById("stopButtonCount");
-var pauseButton = document.getElementById("pauseButtonCount");
+var recordButtonCount = document.getElementById("recordButtonCount");
+var stopButtonCount = document.getElementById("stopButtonCount");
+var pauseButtonCount = document.getElementById("pauseButtonCount");
 
 //add events to those 2 buttons
 recordButtonCount.addEventListener("click", startRecordingCount);
 stopButtonCount.addEventListener("click", stopRecordingCount);
 pauseButtonCount.addEventListener("click", pauseRecordingCount);
 
-function startRecording() {
+function startRecordingCount() {
   // record only 1 file
-  blob_arr_cough = [];
-  recordingsList.innerHTML = "";
+  blob_arr_count = [];
+  recordingsList1.innerHTML = "";
 
 
   console.log("recordButtonCount clicked");
@@ -222,6 +226,7 @@ function startRecording() {
   recordButtonCount.disabled = true;
   stopButtonCount.disabled = false;
   pauseButtonCount.disabled = false;
+  recordButton.disabled=true;
 
   /*
     	We're using the standard promise based getUserMedia()
@@ -261,7 +266,7 @@ function startRecording() {
 
       console.log("Count recording started");
       document.getElementById("recording-now").innerHTML="Recording...";
-
+    })
     .catch(function (err) {
       //enable the record button if getUserMedia() fails
       console.log('Failed')
@@ -298,6 +303,7 @@ function stopRecordingCount() {
   stopButtonCount.disabled = true;
   recordButtonCount.disabled = false;
   pauseButtonCount.disabled = true;
+  recordButton.disabled=false;
 
   //reset button just in case the recording is stopped while paused
   pauseButtonCount.innerHTML = "Pause";
@@ -312,10 +318,8 @@ function stopRecordingCount() {
   rec.exportWAV(createDownloadLink);
 }
 
-const form = document.getElementById("myForm");
-const submit_btn = document.getElementById('submit')
 
-let blob_arr_cough = [];
+let blob_arr_count = [];
 
 function createDownloadLink(blob) {
   var url = URL.createObjectURL(blob);
@@ -323,7 +327,7 @@ function createDownloadLink(blob) {
   var li = document.createElement("li");
   var link = document.createElement("a");
 
-  blob_arr.push(blob)
+  blob_arr_count.push(blob)
 
   //name of .wav file to use during upload and download (without extendion)
   var filename = new Date().toISOString();
@@ -342,7 +346,7 @@ function createDownloadLink(blob) {
   li.appendChild(link);
 
   //add the li element to the ol
-  recordingsList.appendChild(li);
+  recordingsList1.appendChild(li);
 }
 
 // Access the form element...

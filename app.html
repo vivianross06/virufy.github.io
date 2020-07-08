@@ -143,7 +143,7 @@
 					</div>
 				</div>
 				<p><strong>Recordings:</strong></p>
-				<ol id="recordingsList"></ol>
+				<ol id="recordingsList1"></ol>
 
 				<div>
 					<p id="step">Step 3 - Record cough</p>
@@ -165,7 +165,7 @@
 					</div>
 				</div>
 				<p><strong>Recordings:</strong></p>
-				<ol id="recordingsList"></ol>
+				<ol id="recordingsList2"></ol>
 
 				<div>
 					<p id="step">Step 4 - Answer questions</p>
@@ -432,6 +432,9 @@ async function uploadAudio () {
 			// const url = "http://localhost:8899/";
 			const url = "https://voice.sabae.cc/";
 			const formdata = new FormData(myForm)
+			if (blob_arr_count.length>0){
+				formdata.append("count_audio", blob_arr_count[0], "count.wav");
+			}
 			if (blob_arr.length > 0) {
 				formdata.append("cough_audio", blob_arr[0], "cough.wav");
 			}
