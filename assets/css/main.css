@@ -3780,15 +3780,12 @@ img.virufy-image {
  }
 
  #age{
-	 color: #9a9a9a;
+	 color: #444;
 	 border-style: solid;
 	 border-color: #6cc091;
 	 border-radius: 10px;
 	 border-width: thin;
- }
-
- ::placeholder {
-	 color: #9a9a9a !important;
+	 background: none;
  }
 
 /* for app.html */

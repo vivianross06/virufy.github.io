@@ -126,12 +126,12 @@
 				<div>
 					<p id="step">Step 2 - Record cough</p>
 				</div>
-					<p id="disclaimer"> Please cough intentionally for 10 seconds. Force a
+					<p id="disclaimer"> Please cough intentionally for 10 seconds (around 3 times). Force a
 						 cough if you do not have one. A timer will appear after you hit the
 						 record button.
 					</p>
 					<br>
-					
+
 				<!-- Cough -->
 				<div class="row uniform">
 					<div id="cough">
@@ -197,7 +197,16 @@
 				<div class="row uniform">
 					<div class="6u 12u$(xsmall)">
 						<label for="age">Please enter your age: </label>
-						<input type="number" class="form-control" id="age" name="age" aria-describedby="age" placeholder="Enter age">
+						<select id="age" name="age">
+							<option value="no-value" selected disabled>Select age</option>
+							<option value="0-19">Under 20</option>
+							<option value="20-29">20-29</option>
+							<option value="30-39">30-39</option>
+							<option value="40-49">40-49</option>
+							<option value="50-59">50-59</option>
+							<option value="60-69">60-69</option>
+							<option value="70+">70+</option>
+						</select>
 					</div>
 				</div>
 				<br/>
