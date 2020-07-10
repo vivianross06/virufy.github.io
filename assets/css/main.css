@@ -3810,6 +3810,11 @@ img.home_logos{
 	font-size: 200%;
 }
 
+#recording-now{
+	color: #555;
+	font-size: 150%
+}
+
 #app2{
 	text-align: center;
 }

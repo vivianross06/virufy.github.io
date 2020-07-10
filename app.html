@@ -124,7 +124,29 @@
 				<br/>
 
 				<div>
-					<p id="step">Step 2 - Record cough</p>
+					<p id="step">Step 2 - Calibrate</p>
+				</div>
+					<p id="disclaimer"> Please press record and count clearly from one to
+						ten. This will help us match the volume of your cough to the rest of
+						our data.
+					</p>
+					<br>
+
+				<!-- Count -->
+				<div class="row uniform">
+					<div id="count">
+						<div id="recording-now"></div>
+						<button id="recordButtonCount">Record</button>
+						<button id="pauseButtonCount" disabled>Pause</button>
+						<button id="stopButtonCount" disabled>Stop</button>
+
+					</div>
+				</div>
+				<p><strong>Recordings:</strong></p>
+				<ol id="recordingsListCount"></ol>
+
+				<div>
+					<p id="step">Step 3 - Record cough</p>
 				</div>
 					<p id="disclaimer"> Please cough intentionally for 10 seconds (around 3 times). Force a
 						 cough if you do not have one. A timer will appear after you hit the
@@ -143,11 +165,10 @@
 					</div>
 				</div>
 				<p><strong>Recordings:</strong></p>
-				<ol id="recordingsList"></ol>
-
+				<ol id="recordingsList2"></ol>
 
 				<div>
-					<p id="step">Step 3 - Answer questions</p>
+					<p id="step">Step 4 - Answer questions</p>
 				</div>
 				<p id="disclaimer">Please answer some questions to help our AI understand
 					 your cough.</p>
@@ -411,6 +432,9 @@ async function uploadAudio () {
 			// const url = "http://localhost:8899/";
 			const url = "https://voice.sabae.cc/";
 			const formdata = new FormData(myForm)
+			if (blob_arr_count.length>0){
+				formdata.append("count_audio", blob_arr_count[0], "count.wav");
+			}
 			if (blob_arr.length > 0) {
 				formdata.append("cough_audio", blob_arr[0], "cough.wav");
 			}
