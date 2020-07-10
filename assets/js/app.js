@@ -141,7 +141,7 @@ function stopRecording() {
   gumStream.getAudioTracks()[0].stop();
 
   //create the wav blob and pass it on to createDownloadLink
-  rec.exportWAV(createDownloadLink);
+  rec.exportWAV(createDownloadLinkCough);
 }
 
 const form = document.getElementById("myForm");
@@ -149,7 +149,7 @@ const submit_btn = document.getElementById('submit')
 
 let blob_arr = [];
 
-function createDownloadLink(blob) {
+function createDownloadLinkCough(blob) {
   var url = URL.createObjectURL(blob);
   var au = document.createElement("audio");
   var li = document.createElement("li");
@@ -176,6 +176,7 @@ function createDownloadLink(blob) {
   //add the li element to the ol
   recordingsList2.appendChild(li);
 }
+
 
 // Access the form element...
 
@@ -207,7 +208,7 @@ pauseButtonCount.addEventListener("click", pauseRecordingCount);
 function startRecordingCount() {
   // record only 1 file
   blob_arr_count = [];
-  recordingsList1.innerHTML = "";
+  recordingsListCount.innerHTML = "";
 
 
   console.log("recordButtonCount clicked");
@@ -285,12 +286,12 @@ function pauseRecordingCount() {
   if (rec.recording) {
     //pause
     rec.stop();
-    pauseButton.innerHTML = "Resume";
+    pauseButtonCount.innerHTML = "Resume";
   } else {
     //resume
     document.getElementById("recording-now").innerHTML="Recording..."
     rec.record();
-    pauseButton.innerHTML = "Pause";
+    pauseButtonCount.innerHTML = "Pause";
   }
 }
 
@@ -315,13 +316,13 @@ function stopRecordingCount() {
   gumStream.getAudioTracks()[0].stop();
 
   //create the wav blob and pass it on to createDownloadLink
-  rec.exportWAV(createDownloadLink);
-}
+  rec.exportWAV(createDownloadLinkCount);
 
+}
 
 let blob_arr_count = [];
 
-function createDownloadLink(blob) {
+function createDownloadLinkCount(blob) {
   var url = URL.createObjectURL(blob);
   var au = document.createElement("audio");
   var li = document.createElement("li");
@@ -346,8 +347,9 @@ function createDownloadLink(blob) {
   li.appendChild(link);
 
   //add the li element to the ol
-  recordingsList1.appendChild(li);
+  recordingsListCount.appendChild(li);
 }
+
 
 // Access the form element...
 
