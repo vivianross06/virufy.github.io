@@ -217,7 +217,7 @@
 				<!-- Age Question -->
 				<div class="row uniform">
 					<div class="6u 12u$(xsmall)">
-						<label for="age">Please enter your age: </label>
+						<label for="age">Please enter your age group</label>
 						<select id="age" name="age">
 							<option value="no-value" selected disabled>Select age</option>
 							<option value="0-19">Under 20</option>
@@ -325,10 +325,52 @@
                     </div>
                 </div>
 				<!-- Break -->
+				<br>
+				<br>
 				<!-- Break -->
-				<div class="row uniform"><br>
-					<!-- Break -->
+				<div id="sym-checkbox-wrapper" class="row uniform">
+ 					<div class="6u 12u$(small)">
+ 						<label></span>Medical History</label>
 
+ 						<input class="sym-checkbox" type="checkbox" id="roundtrip01" name="medical_history1" value="Asthma or chronic lung disease">
+ 						<label for="roundtrip01">Asthma or chronic lung disease</label>
+ 						<br>
+
+ 						<input class="sym-checkbox" type="checkbox" id="roundtrip02" name="medical_history2" value="Pregnancy">
+ 						<label for="roundtrip02">Pregnancy</label>
+
+ 						<br>
+ 						<input class="sym-checkbox" type="checkbox" id="roundtrip03" name="medical_history3" value="Diabetes with complications">
+ 						<label for="roundtrip03">Diabetes with complications</label>
+ 						<br>
+
+ 						<input class="sym-checkbox" type="checkbox" id="roundtrip04" name="medical_history4"
+ 							value="Disease or conditions that make it harder to cough">
+ 						<label for="roundtrip04">Disease or conditions that affect cough</label>
+ 						<br>
+
+ 						<input class="sym-checkbox" type="checkbox" id="roundtrip05" name="medical_history5" value="Congestive heart failure">
+ 						<label for="roundtrip05">Congestive heart failure</label>
+
+ 						<br>
+
+ 						<input class="sym-checkbox" type="checkbox" id="roundtrip07" name="medical_history7" value="Extreme obesity">
+ 						<label for="roundtrip07">Extreme obesity</label>
+ 						<br>
+
+ 						<input class="sym-checkbox" type="checkbox" id="roundtrip08" name="medical_history8" value="Cough due to other medical conditions">
+ 						<label for="roundtrip08">Cough due to other medical conditions</label>
+ 						<br>
+
+
+ 						<input class="sym-checkbox sym-none" type="checkbox" id="roundtrip09" name="medical_history9" value="None">
+ 						<label for="roundtrip09">None</label>
+
+ 					</div>
+ 				</div>
+					<!-- Break -->
+					<br>
+					<br>
 					<div class="12u$">
 						<ul class="actions">
 							<li><input type="button" value="Submit" id="submit" onclick="submit_data()" /></li>
@@ -344,7 +386,6 @@
 				</div>
 			</form>
 			<hr />
-		</div>
 
 	</section>
 
