@@ -3512,12 +3512,18 @@ button:disabled,
 }
 
 .collab img {
-	width: 9em;
+	width: 7em;
 	margin: 0 3em;
 }
 
 #u-lahore-logo {
 	margin-top: 3em;
+}
+
+@media screen and (max-width: 1210px){
+	.collab img {
+		width: 11em;
+	}
 }
 
 /*media queries for icons sizing*/
