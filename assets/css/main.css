@@ -3829,3 +3829,12 @@ img.home_logos{
 	font-weight: bold;
 	margin: 0 0 0.25em 0;
 }
+
+#why-work{
+	margin: 0 0 0.5em 0;
+	font-size: 1.5em;
+}
+
+#why_work_link:hover{
+	text-decoration: underline;
+}
