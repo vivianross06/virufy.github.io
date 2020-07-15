@@ -2936,6 +2936,13 @@ button:disabled,
 	font-size: 1em;
 }
 
+@media screen and (min-width: 1021px) and (max-width: 1160px){
+	nav {
+		width: 85%;
+		float: right;
+	}
+}
+
 #header a:hover {
 	color: #ffffff;
 }
