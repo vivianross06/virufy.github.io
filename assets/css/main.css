@@ -3787,11 +3787,11 @@ img.virufy-image {
 
  #age{
 	 color: #444;
-	 border-style: solid;
 	 border-color: #6cc091;
 	 border-radius: 10px;
 	 border-width: thin;
 	 background: none;
+	 width: 40%;
  }
 
 /* for app.html */
