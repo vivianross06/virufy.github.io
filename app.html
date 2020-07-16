@@ -28,6 +28,7 @@
 	<meta name="author" content="Team Virufy">
 
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/header.css" />
 		<script src="https://kit.fontawesome.com/828decba15.js" crossorigin="anonymous"></script>
 
 	<!--Sweet Alert-->
@@ -60,18 +61,27 @@
 				<img src="images/logo.png">
 			</a>
 			<nav id="nav">
-				<a href="index.html">Home</a>
-				<a href="./index.html#about">About</a>
-				<a href="./app.html">App</a>
-				<a href="./research.html">Research</a>
-				<a href="data.html">Open Data</a>
-				<a href="./team.html">Team</a>
-				<a href="./goals.html">Goals</a>
-				<a href="./join.html">Join Us</a>
-				<a href="./oyw.html">One Young World</a>
-				<a href="https://blog.virufy.org/">Blog</a>
-				<a href="https://www.gofundme.com/f/virufyorg" target="_blank"><button>Donate</button>
+				<a href="index.html" data-i18n="nav.home"></a>
+				<a href="./index.html#about" data-i18n="nav.about"></a>
+				<a href="./app.html" data-i18n="nav.app"></a>
+				<a href="./research.html" data-i18n="nav.research"></a>
+				<a href="data.html" data-i18n="nav.openData"></a>
+				<a href="./team.html" data-i18n="nav.team"></a>
+				<a href="./goals.html" data-i18n="nav.goals"></a>
+				<a href="./join.html" data-i18n="nav.joinUs"></a>
+				<a href="./oyw.html" data-i18n="nav.oneYoungWorld"></a>
+				<a href="https://blog.virufy.org/"　data-i18n="nav.blog"></a>
+				<a href="https://www.gofundme.com/f/virufyorg" target="_blank">
+					<button data-i18n="nav.donate"></button>
 				</a>
+
+				<div class="language-toggle">
+					<select id="language-toggle-select" name="language" id="language">
+						<option
+						 value="en" data-i18n="languageToggle.en"></option>
+						<option value="jp" data-i18n="languageToggle.jp"></option>
+					</select>
+				</div>
 			</nav>
 			<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 		</div>
@@ -81,7 +91,7 @@
 	<section id="app-banner">
 		<div class="inner">
 			<header>
-				<h1>Virufy COVID-19 (Beta)</h1>
+				<h1 data-i18n="appBanner.title"></h1>
 			</header>
 		</div>
 	</section>
@@ -103,7 +113,7 @@
 
 			<form method="POST" enctype="multipart/form-data" id="myForm">
 				<div>
-					<p id="step">Step 1 - Consent to the study</p>
+					<p>Step 1</p>
 				</div>
 				<p id="disclaimer">We care about privacy. We are advised by licensed data privacy experts and will anonymize all
 					information and recordings.</p>
@@ -247,23 +257,6 @@
 				 									</div>
 				         </div>
 				 				<br/>
-
-			  <!--Country-->
-				<div class="row uniform">
- 					<div class="6u 12u$(xsmall)">
- 						<label for="country-of-origin">Country of origin:</label>
- 							<select name="country" id="country">
- 								<option value="" disabled selected>Select country</option>
- 								<option data-countrycode="BR
- 													data-tokens=" br="" brazil"="" value="BR">Brazil</option>
- 								<option data-countrycode="US
- 													data-tokens=" us="" united="" states="" of="" america"="" value="US">United States of America</option>
- 								<option data-countrycode="OT
- 													data-tokens=" ot="" other"="" value="OT">Other</option>
-							</select>
-					</div>
- 				</div>
- 				<br>
 
 				<!-- Smoker/Nonsmoker -->
 				<div class="12u 12u$(small)">
@@ -454,8 +447,14 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
+	<!-- internationalization -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/8.1.0/i18next.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.0/jquery-i18next.min.js" ></script>
+	<script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>
+	<script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+	<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+	<script src="assets/js/i18n.js"></script>
 	<script>
-
         $('#sym-checkbox-wrapper .sym-checkbox').on('change', function () {
             let $this = $(this);
             if ($this.prop('checked')) {
@@ -467,68 +466,67 @@
             }
         });
 
+		const sleep = async (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
-        const sleep = async (msec) => new Promise((resolve) => setTimeout(resolve, msec));
-
-function resetUserID () {
-	localStorage.removeItem("virufy-userid");
-	//alert("reset userid");
-	localStorage.removeItem("virufy-age");
-};
-function initFormData () {
-	if (localStorage.getItem("virufy-age")) {
-		age.value = localStorage.getItem("virufy-age");
-	}
-};
-
-//resetbtn.onclick = () => resetUserID();
-window.onload = () => {
-	initFormData();
-};
-
-async function uploadAudio () {
-  for (;;) {
-    try {
-			// const url = "http://localhost:8899/";
-			const url = "https://voice.sabae.cc/";
-			const formdata = new FormData(myForm)
-			if (blob_arr_count.length>0){
-				formdata.append("count_audio", blob_arr_count[0], "count.wav");
+		function resetUserID () {
+			localStorage.removeItem("virufy-userid");
+			//alert("reset userid");
+			localStorage.removeItem("virufy-age");
+		};
+		function initFormData () {
+			if (localStorage.getItem("virufy-age")) {
+				age.value = localStorage.getItem("virufy-age");
 			}
-			if (blob_arr.length > 0) {
-				formdata.append("cough_audio", blob_arr[0], "cough.wav");
-			}
+		};
 
-			if (age.value != localStorage.getItem("virufy-age")) {
-				 resetUserID();
-			}
-			let userid = localStorage.getItem("virufy-userid");
-			if (!userid) {
-				userid = Math.random().toString() + "-" + new Date().getTime();
-				formdata.append("userid", userid);
-				localStorage.setItem("virufy-userid", userid);
-			} else {
-				formdata.append("userid", userid);
-			}
+		//resetbtn.onclick = () => resetUserID();
+		window.onload = () => {
+			initFormData();
+		};
 
-			// save the value of Age
-			if (!localStorage.getItem("virufy-age")){
-				localStorage.setItem("virufy-age", age.value);
-			}
+		async function uploadAudio () {
+		for (;;) {
+			try {
+					// const url = "http://localhost:8899/";
+					const url = "https://voice.sabae.cc/";
+					const formdata = new FormData(myForm)
+					if (blob_arr_count.length>0){
+						formdata.append("count_audio", blob_arr_count[0], "count.wav");
+					}
+					if (blob_arr.length > 0) {
+						formdata.append("cough_audio", blob_arr[0], "cough.wav");
+					}
 
-      const res = await (await fetch(url, { method: 'POST', body: formdata })).json()
-      console.log(res)
-      if (res.res == 'ok') {
-        return res.id
-      }
-			alert("upload error, retry? (" + res.res + ") tap to retry");
-    } catch (e) {
-			alert("upload error, retry? (" + e + ") tap to retry");
-			break;
-    }
-		await sleep(500);
-  }
-}
+					if (age.value != localStorage.getItem("virufy-age")) {
+						resetUserID();
+					}
+					let userid = localStorage.getItem("virufy-userid");
+					if (!userid) {
+						userid = Math.random().toString() + "-" + new Date().getTime();
+						formdata.append("userid", userid);
+						localStorage.setItem("virufy-userid", userid);
+					} else {
+						formdata.append("userid", userid);
+					}
+
+					// save the value of Age
+					if (!localStorage.getItem("virufy-age")){
+						localStorage.setItem("virufy-age", age.value);
+					}
+
+			const res = await (await fetch(url, { method: 'POST', body: formdata })).json()
+			console.log(res)
+			if (res.res == 'ok') {
+				return res.id
+			}
+					alert("upload error, retry? (" + res.res + ") tap to retry");
+			} catch (e) {
+					alert("upload error, retry? (" + e + ") tap to retry");
+					break;
+			}
+				await sleep(500);
+		}
+		}
 
 		async function submit_data() {
 			await uploadAudio();
@@ -562,8 +560,13 @@ async function uploadAudio () {
 
 	</script>
 
+	<script>
+		i18nManager(function() {
+			$('body').localize();
+		})
+	</script>
+
 	<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
-	<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
 	<script src="assets/js/app.js"></script>
 </body>
 
