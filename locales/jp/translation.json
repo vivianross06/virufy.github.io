@@ -1,0 +1,22 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "about": "Virufyとは？",
+        "app": "アプリ",
+        "research": "研究",
+        "openData": "オープンデータ",
+        "team": "チーム",
+        "goals": "目的",
+        "joinUs": "チームに参加",
+        "oneYoungWorld": "One Young World",
+        "blog": "ブログ",
+        "donate": "寄付"
+    },
+    "languageToggle": {
+        "en": "英語",
+        "jp": "日本語"
+    },
+    "appBanner": {
+        "title": "Virufy COVID-19 (β版)"
+    }
+}

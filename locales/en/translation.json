@@ -1,0 +1,22 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "app": "App",
+        "research": "Research",
+        "openData": "Open Data",
+        "team": "Team",
+        "goals": "Goals",
+        "joinUs": "Join Us",
+        "oneYoungWorld": "One Young World",
+        "blog": "Blog",
+        "donate": "DONATE"
+    },
+    "languageToggle": {
+        "en": "English",
+        "jp": "Japanese"
+    },
+    "appBanner": {
+        "title": "Virufy COVID-19 (Beta)"
+    }
+}
