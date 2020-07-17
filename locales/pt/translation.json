@@ -1,0 +1,29 @@
+{
+    "nav": {
+        "home": "Pagina Inicial",
+        "about": "Sobre Virufy",
+        "app": "Aplicativo",
+        "research": "研究",
+        "openData": "Pesquisa",
+        "team": "Equipe",
+        "goals": "Metas",
+        "joinUs": "Junte-se",
+        "oneYoungWorld": "Um Mundo Jovem",
+        "blog": "Blog",
+        "donate": "Doar"
+    },
+    "languageToggle": {
+        "en": "Inglês",
+        "jp": "Japonês",
+        "pt": "Português"
+    },
+    "appBanner": {
+        "title": "Virufy COVID-19 (Beta)"
+    },
+    "main":{
+      "ask":"\nAjude-nos a tornar seu smartphone um kit de teste COVID instantâneo! Doar sua tosse ajudará nossos algoritmos de IA a aprender como é o COVID. Precisamos da sua tosse, independentemente do seu status COVID. Por favor, note que este aplicativo é apenas para coleta de dados. Não irá prever o seu status COVID."
+    },
+    "step" : {
+        "one" : "Passo 1 - Registro de Tosse"
+    }
+}
