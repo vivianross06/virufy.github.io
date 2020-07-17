@@ -70,8 +70,17 @@
 				<a href="./join.html" data-i18n="nav.joinUs"></a>
 				<a href="./oyw.html" data-i18n="nav.oneYoungWorld"></a>
 				<a href="https://blog.virufy.org/" data-i18n="nav.blog"></a>
-				<a href="https://www.gofundme.com/f/virufyorg" target="_blank" data-i18n="nav.donate"><button></button>
+				<a href="https://www.gofundme.com/f/virufyorg" target="_blank"><button data-i18n="nav.donate"></button>
 				</a>
+
+				<div class="language-toggle">
+					<select id="language-toggle-select" name="language" id="language">
+						<option value="en" data-i18n="languageToggle.en"></option>
+						<option value="jp" data-i18n="languageToggle.jp"></option>
+						<option value="pt" data-i18n="languageToggle.pt"></option>
+					</select>
+				</div>
+
 			</nav>
 			<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 		</div>
@@ -81,7 +90,7 @@
 	<section id="app-banner">
 		<div class="inner">
 			<header>
-				<h1>Virufy COVID-19 (Beta)</h1>
+				<h1 data-i18n="appBanner.title">Virufy COVID-19 (Beta)</h1>
 			</header>
 		</div>
 	</section>
@@ -96,9 +105,7 @@
 			</div>
 			<br>
 		-->
-			<p style="color: #444; font-size: 1.3em;">Help us make your smartphone an instant COVID testing kit! Donating
-				your cough will help our AI algorithms learn what COVID sounds like. We need your cough, regardless of your COVID status.<br>
-				Please note that this app is for data collection only. It will not predict your COVID status.
+			<p style="color: #444; font-size: 1.3em;" data-i18n="main.ask">
 			</p>
 
 			<form method="POST" enctype="multipart/form-data" id="myForm">
