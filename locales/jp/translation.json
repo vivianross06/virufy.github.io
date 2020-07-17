@@ -14,9 +14,15 @@
     },
     "languageToggle": {
         "en": "英語",
-        "jp": "日本語"
+        "jp": "日本語",
+        "pt": "ポルトガル語"
     },
     "appBanner": {
         "title": "Virufy COVID-19 (β版)"
+    },
+    "main":{
+      "ask":"Help us make your smartphone an instant COVID testing kit! Donating
+				your cough will help our AI algorithms learn what COVID sounds like. We need your cough, regardless of your COVID status.
+				Please note that this app is for data collection only. It will not predict your COVID status."
     }
 }

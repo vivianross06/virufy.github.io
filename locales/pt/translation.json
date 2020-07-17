@@ -1,22 +1,28 @@
 {
     "nav": {
-        "home": "ホーム",
-        "about": "Virufyとは？",
-        "app": "アプリ",
+        "home": "Pagina Inicial",
+        "about": "Sobre Virufy",
+        "app": "Aplicativo",
         "research": "研究",
-        "openData": "オープンデータ",
-        "team": "チーム",
-        "goals": "目的",
-        "joinUs": "チームに参加",
-        "oneYoungWorld": "One Young World",
-        "blog": "ブログ",
-        "donate": "寄付"
+        "openData": "Pesquisa",
+        "team": "Equipe",
+        "goals": "Metas",
+        "joinUs": "Junte-se",
+        "oneYoungWorld": "Um Mundo Jovem",
+        "blog": "Blog",
+        "donate": "Doar"
     },
     "languageToggle": {
-        "en": "英語",
-        "jp": "日本語"
+        "en": "Inglês",
+        "jp": "Japonês",
+        "pt": "Português"
     },
     "appBanner": {
-        "title": "Virufy COVID-19 (β版)"
+        "title": "Virufy COVID-19 (Beta)"
+    },
+    "main":{
+      "ask":"Help us make your smartphone an instant COVID testing kit! Donating
+				your cough will help our AI algorithms learn what COVID sounds like. We need your cough, regardless of your COVID status.
+				Please note that this app is for data collection only. It will not predict your COVID status."
     }
 }
