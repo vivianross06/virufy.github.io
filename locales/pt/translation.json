@@ -21,8 +21,9 @@
         "title": "Virufy COVID-19 (Beta)"
     },
     "main":{
-      "ask":"Help us make your smartphone an instant COVID testing kit! Donating
-				your cough will help our AI algorithms learn what COVID sounds like. We need your cough, regardless of your COVID status.
-				Please note that this app is for data collection only. It will not predict your COVID status."
+      "ask":"\nAjude-nos a tornar seu smartphone um kit de teste COVID instantâneo! Doar sua tosse ajudará nossos algoritmos de IA a aprender como é o COVID. Precisamos da sua tosse, independentemente do seu status COVID. Por favor, note que este aplicativo é apenas para coleta de dados. Não irá prever o seu status COVID."
+    },
+    "step" : {
+        "one" : "Passo 1 - Registro de Tosse"
     }
 }
