@@ -20,10 +20,67 @@
     "appBanner": {
         "title": "Virufy COVID-19 (Beta)"
     },
-    "main":{
-      "ask":"\nAjude-nos a tornar seu smartphone um kit de teste COVID instantâneo! Doar sua tosse ajudará nossos algoritmos de IA a aprender como é o COVID. Precisamos da sua tosse, independentemente do seu status COVID. Por favor, note que este aplicativo é apenas para coleta de dados. Não irá prever o seu status COVID."
+    "main": {
+        "ask": "Help us make your smartphone an instant COVID testing kit! Donating your cough will help our AI algorithms learn what COVID sounds like. We need your cough, regardless of your COVID status.(PT)",
+        "note": "Please note that this app is for data collection only. It will not predict your COVID status.(pt)"
     },
-    "step" : {
-        "one" : "Passo 1 - Registro de Tosse"
+    "step": {
+        "one": "Step 1 - Consent to the study pt",
+        "two": "Step 2 - Record speech pt",
+        "three": "Step 3 - Record cough pt",
+        "four": "Step 4 - Answer questions pt"
+    },
+    "disclaimer": {
+        "one": "We care about privacy. We are advised by licensed data privacy experts and will anonymize all information and recordings. pt",
+        "two": "Please press record and count clearly from one to ten. This will help us match the volume of your cough to the rest of our data. pt",
+        "three": "Please cough intentionally for 10 seconds (around 3 times). Force a cough if you do not have one. A timer will appear after you hit the record button. pt",
+        "four": "Please answer some questions to help our AI understand your cough. pt"
+    },
+    "consent": {
+        "question": "Do you consent to participating in this research? pt",
+        "form": "consent form pt",
+        "yes": "Yes pt",
+        "no": "No pt"
+    },
+    "record": {
+        "record": "Record pt",
+        "pause": "Pause pt",
+        "stop": "Stop pt",
+        "recordings": "Recordings: pt"
+    },
+    "condition": {
+        "question": "Which of the following best describes you? pt",
+        "positive": "I have tested positive for COVID-19 pt",
+        "negative": "I have tested negative for COVID-19 pt",
+        "pending": "My test result is pending pt",
+        "untested": "I have not been tested for COVID-19 pt"
+    },
+    "test": {
+        "question": "How long ago were you tested? pt",
+        "fifteen": "Within the last 15 days pt",
+        "moreThanFifteen": "More than 15 days ago pt",
+        "untested": "Not tested pt"
+    },
+    "age": {
+        "question": "Please enter your age group: pt",
+        "placeholder": "Select age pt",
+        "underTwenty": "Under 20 pt"
+    },
+    "gender": {
+        "question": "What is your biological sex? pt",
+        "female": "Female pt",
+        "male": "Male pt"
+    },
+    "country": {
+        "question": "Where are you now? pt",
+        "placeholder": "Select country pt",
+        "brazil": "Brazil pt",
+        "us": "United States of America pt",
+        "other": "Other pt"
+    },
+    "smoking": {
+        "question": "Have you smoked regularly within the last ten years? pt",
+        "yes": "Yes pt",
+        "no": "No pt"
     }
 }

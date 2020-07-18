@@ -14,12 +14,73 @@
     },
     "languageToggle": {
         "en": "英語",
-        "jp": "日本語"
+        "jp": "日本語",
+        "pt": "Portuguese"
     },
     "appBanner": {
         "title": "Virufy COVID-19 (β版)"
     },
     "main": {
-        "ask": "Help us make your smartphone an instant COVID testing kit! Donating your cough will help our AI algorithms learn what COVID sounds like. We need your cough, regardless of your COVID status. Please note that this app is for data collection only. It will not predict your COVID status."
+        "ask": "Help us make your smartphone an instant COVID testing kit! Donating your cough will help our AI algorithms learn what COVID sounds like. We need your cough, regardless of your COVID status.",
+        "note": "Please note that this app is for data collection only. It will not predict your COVID status."
+    },
+    "step": {
+        "one": "Step 1 - Consent to the study",
+        "two": "Step 2 - Record speech",
+        "three": "Step 3 - Record cough",
+        "four": "Step 4 - Answer questions"
+    },
+    "disclaimer": {
+        "one": "We care about privacy. We are advised by licensed data privacy experts and will anonymize all information and recordings.",
+        "two": "Please press record and count clearly from one to ten. This will help us match the volume of your cough to the rest of our data.",
+        "three": "Please cough intentionally for 10 seconds (around 3 times). Force a cough if you do not have one. A timer will appear after you hit the record button.",
+        "four": "Please answer some questions to help our AI understand your cough."
+    },
+    "consent": {
+        "question": "Do you consent to participating in this research?",
+        "form": "consent form",
+        "yes": "Yes",
+        "no": "No"
+    },
+    "record": {
+        "record": "Record",
+        "pause": "Pause",
+        "stop": "Stop",
+        "recordings": "Recordings:"
+    },
+    "condition": {
+        "question": "Which of the following best describes you?",
+        "positive": "I have tested positive for COVID-19",
+        "negative": "I have tested negative for COVID-19",
+        "pending": "My test result is pending",
+        "untested": "I have not been tested for COVID-19"
+    },
+    "test": {
+        "question": "How long ago were you tested?",
+        "fifteen": "Within the last 15 days",
+        "moreThanFifteen": "More than 15 days ago",
+        "untested": "Not tested"
+    },
+    "age": {
+        "question": "Please enter your age group:",
+        "placeholder": "Select age",
+        "underTwenty": "Under 20"
+    },
+    "gender": {
+        "question": "What is your biological sex?",
+        "female": "Female",
+        "male": "Male"
+    },
+    "country": {
+        "question": "Where are you now?",
+        "placeholder": "Select country",
+        "brazil": "Brazil",
+        "us": "United States of America",
+        "other": "Other"
+    },
+    "smoking": {
+        "question": "Have you smoked regularly within the last ten years?",
+        "yes": "Yes",
+        "no": "No"
     }
 }

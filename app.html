@@ -107,39 +107,41 @@
 			</div>
 			<br>
 		-->
-			<p style="color: #444; font-size: 1.3em;" data-i18n="main.ask">
+			<p style="color: #444; font-size: 1.3em; margin: 0 0 0 0;" data-i18n="main.ask">
+			</p>
+			<p style="color: #444; font-size: 1.3em;" data-i18n="main.note">
 			</p>
 
 			<form method="POST" enctype="multipart/form-data" id="myForm">
 				<div>
-					<p id="step">Step 1 - Consent to the study</p>
+					<p id="step" data-i18n="step.one"></p>
 				</div>
-				<p id="disclaimer">We care about privacy. We are advised by licensed data privacy experts and will anonymize all
-					information and recordings.</p>
+				<p id="disclaimer" data-i18n="disclaimer.one"></p>
 				<br>
 				<!--Consent Question -->
 				<div class="form-group">
-						<label for="consent">Do you consent to participating in this research? (<a href="consent_form.pdf" target=_blank>consent form</a>)<span class="is-required">*</span></label>
+					<label for="consent" data-i18n="consent.question"><span class="is-required">*</span></label>
+					<a href="consent_form.pdf" target=_blank data-i18n="consent.form"></a>
+
+
 						<!-- Add consent form here -->
 				</div>
 				<div class="form-check form-check-inline" style="margin-left: 5px">
             <input class="form-check-input"type="radio" name="consent" id="consent_yes" value="yes">
-            <label class="form-check-label" for="consent_yes" style="margin-left: 3px">Yes</label>
+            <label class="form-check-label" for="consent_yes" style="margin-left: 3px" data-i18n="consent.yes"></label>
         </div>
 
 				<div class="form-check form-check-inline" style="margin-left: 5px">
             <input class="form-check-input" type="radio" name="consent" id="consent_no" value="no">
-            <label class="form-check-label" for="consent_no" style="margin-left: 3px">No</label>
+            <label class="form-check-label" for="consent_no" style="margin-left: 3px" data-i18n="consent.no"></label>
         </div>
 
 				<br/>
 
 				<div>
-					<p id="step">Step 2 - Record speech</p>
+					<p id="step" data-i18n="step.two"></p>
 				</div>
-					<p id="disclaimer"> Please press record and count clearly from one to
-						ten. This will help us match the volume of your cough to the rest of
-						our data.
+					<p id="disclaimer" data-i18n="disclaimer.two">
 					</p>
 					<br>
 
@@ -147,21 +149,19 @@
 				<div class="row uniform">
 					<div id="count">
 						<div id="recording-now"></div>
-						<button id="recordButtonCount">Record</button>
-						<button id="pauseButtonCount" disabled>Pause</button>
-						<button id="stopButtonCount" disabled>Stop</button>
+						<button id="recordButtonCount" data-i18n="record.record"></button>
+						<button id="pauseButtonCount" disabled data-i18n="record.pause"></button>
+						<button id="stopButtonCount" disabled data-i18n="record.stop"></button>
 
 					</div>
 				</div>
-				<p><strong>Recordings:</strong></p>
+				<p><strong data-i18n="record.recordings"></strong></p>
 				<ol id="recordingsListCount"></ol>
 
 				<div>
-					<p id="step">Step 3 - Record cough</p>
+					<p id="step" data-i18n="step.three"></p>
 				</div>
-					<p id="disclaimer"> Please cough intentionally for 10 seconds (around 3 times). Force a
-						 cough if you do not have one. A timer will appear after you hit the
-						 record button.
+					<p id="disclaimer" data-i18n="disclaimer.three">
 					</p>
 					<br>
 
@@ -169,57 +169,56 @@
 				<div class="row uniform">
 					<div id="cough">
 						<div id="displayTimer"></div>
-						<button id="recordButton">Record</button>
-						<button id="pauseButton" disabled>Pause</button>
-						<button id="stopButton" disabled>Stop</button>
+						<button id="recordButton" data-i18n="record.record"></button>
+						<button id="pauseButton" disabled data-i18n="record.pause"></button>
+						<button id="stopButton" disabled data-i18n="record.stop"></button>
 
 					</div>
 				</div>
-				<p><strong>Recordings:</strong></p>
+				<p><strong data-i18n="record.recordings"></strong></p>
 				<ol id="recordingsList2"></ol>
 
 				<div>
-					<p id="step">Step 4 - Answer questions</p>
+					<p id="step" data-i18n="step.four"></p>
 				</div>
-				<p id="disclaimer">Please answer some questions to help our AI understand
-					 your cough.</p>
+				<p id="disclaimer" data-i18n="disclaimer.four"></p>
 				<br>
 				<!-- Covid Condition -->
 				<div class="form-group">
-						<label for="condition">Which of the following best describes you?</label>
+						<label for="condition" data-i18n="condition.question"></label>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="condition" id="condition_positive" value="positive">
-												<label class="form-check-label" for="condition_positive" style="margin-left: 3px">I have tested positive for COVID-19</label>
+												<label class="form-check-label" for="condition_positive" style="margin-left: 3px" data-i18n="condition.positive"></label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="condition" id="condition_negative" value="negative">
-												<label class="form-check-label" for="condition_negative" style="margin-left: 3px">I have tested negative for COVID-19</label>
+												<label class="form-check-label" for="condition_negative" style="margin-left: 3px" data-i18n="condition.negative"></label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="condition" id="condition_pending" value="pending">
-												<label class="form-check-label" for="condition_pending" style="margin-left: 3px">My test result is pending</label>
+												<label class="form-check-label" for="condition_pending" style="margin-left: 3px" data-i18n="condition.pending"></label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="condition" id="condition_untested" value="pending">
-												<label class="form-check-label" for="condition_untested" style="margin-left: 3px">I have not been tested for COVID-19</label>
+												<label class="form-check-label" for="condition_untested" style="margin-left: 3px" data-i18n="condition.untested"></label>
 									</div>
 				</div>
 				<br/>
 
 				<!-- PCR Test -->
 				<div class="form-group">
-						<label for="test">How long ago were you tested?</label>
+						<label for="test" data-i18n="test.question"></label>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="test" id="test-15-days" value="15-days">
-												<label class="form-check-label" for="test-15-days" style="margin-left: 3px">Within the last 15 days</label>
+												<label class="form-check-label" for="test-15-days" style="margin-left: 3px" data-i18n="test.fifteen"></label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="test" id="test-greater-than-15-days" value="greater-than-15-days">
-												<label class="form-check-label" for="test-greater-than-15-days" style="margin-left: 3px">More than 15 days ago</label>
+												<label class="form-check-label" for="test-greater-than-15-days" style="margin-left: 3px" data-i18n="test.moreThanFifteen"></label>
 									</div>
 									<div class="form-check form-check-inline" style="margin-left: 5px">
 												<input class="form-check-input" type="radio" name="test" id="test-untested" value="untested">
-												<label class="form-check-label" for="test-untested" style="margin-left: 3px">Not tested</label>
+												<label class="form-check-label" for="test-untested" style="margin-left: 3px" data-i18n="test.untested"></label>
 									</div>
 				</div>
 				<br/>
@@ -228,10 +227,10 @@
 				<!-- Age Question -->
 				<div class="row uniform">
 					<div class="6u 12u$(xsmall)">
-						<label for="age">Please enter your age group:</label>
+						<label for="age" data-i18n="age.question"></label>
 						<select id="age" name="age">
-							<option value="no-value" selected disabled>Select age</option>
-							<option value="0-19">Under 20</option>
+							<option value="no-value" selected disabled data-i18n="age.placeholder"></option>
+							<option value="0-19" data-i18n="age.underTwenty"></option>
 							<option value="20-29">20-29</option>
 							<option value="30-39">30-39</option>
 							<option value="40-49">40-49</option>
@@ -245,14 +244,14 @@
 
 				<!-- Gender -->
 				 				<div class="form-group">
-				             <label for="gender">What is your biological sex?</label>
+				             <label for="gender" data-i18n="gender.question"></label>
 										 			<div class="form-check form-check-inline" style="margin-left: 5px">
 				                         <input class="form-check-input" type="radio" name="gender" id="gender_female" value="female">
-				                         <label class="form-check-label" for="gender_female" style="margin-left: 3px">Female</label>
+				                         <label class="form-check-label" for="gender_female" style="margin-left: 3px" data-i18n="gender.female"></label>
 				                   </div>
 													<div class="form-check form-check-inline" style="margin-left: 5px">
 				                     			<input class="form-check-input" type="radio" name="gender" id="gender_male" value="male">
-				                      		<label class="form-check-label" for="gender_male" style="margin-left: 3px">Male</label>
+				                      		<label class="form-check-label" for="gender_male" style="margin-left: 3px" data-i18n="gender.male"></label>
 				 									</div>
 				         </div>
 				 				<br/>
@@ -260,15 +259,12 @@
 			  <!--Country-->
 				<div class="row uniform">
  					<div class="6u 12u$(xsmall)">
- 						<label for="country-of-origin">Where are you now?</label>
+ 						<label for="country-of-origin" data-i18n="country.question"></label>
  							<select name="country" id="country">
- 								<option value="" disabled selected>Select country</option>
- 								<option data-countrycode="BR
- 													data-tokens=" br="" brazil"="" value="BR">Brazil</option>
- 								<option data-countrycode="US
- 													data-tokens=" us="" united="" states="" of="" america"="" value="US">United States of America</option>
- 								<option data-countrycode="OT
- 													data-tokens=" ot="" other"="" value="OT">Other</option>
+ 								<option value="" disabled selected data-i18n="country.placeholder"></option>
+ 								<option data-countrycode="BR data-tokens=" br="" brazil"="" value="BR" data-i18n="country.brazil"></option>
+ 								<option data-countrycode="US data-tokens=" us="" united="" states="" of="" america"="" value="US" data-i18n="country.us"></option>
+ 								<option data-countrycode="OT data-tokens=" ot="" other"="" value="OT" data-i18n="country.other"></option>
 							</select>
 					</div>
  				</div>
@@ -276,54 +272,54 @@
 
 				<!-- Smoker/Nonsmoker -->
 				<div class="12u 12u$(small)">
-						<label></span>Have you smoked regularly within the last ten years?<span class="is-required">*</span></label>
+						<label data-i18n="smoking.question"><span class="is-required">*</span></label>
 				</div>
 
 				<div class="12u 12u$(small)" style="margin-left: 5px">
 						<input type="radio" id="Y" name="smoker" value="Yes">
-						<label for="Y">Yes</label>
+						<label for="Y" data-i18n="smoking.yes"></label>
 				</div>
 
 				<div class="12u 12u$(small)" style="margin-left: 5px">
 						<input type="radio" id="N" name="smoker" value="No">
-						<label for="N">No</label>
+						<label for="N" data-i18n="smoking.no"></label>
 				</div>
 
 				<br/>
 				<!-- Break -->
                 <div id="sym-checkbox-wrapper" class="row uniform">
                     <div class="6u 12u$(small)">
-                        <label>Which of the symptoms below do you currently have?</label>
+                        <label data-i18n="symptoms.question"></label>
 
                         <input class="sym-checkbox" type="checkbox" id="roundtrip1" name="reported_symptoms1"
                                value="New or worsening cough">
-                        <label for="roundtrip1">New or worsening cough</label>
+                        <label for="roundtrip1" data-i18n="symptoms.cough"></label>
                         <br>
 
                         <input class="sym-checkbox" type="checkbox" id="roundtrip2" name="reported_symptoms2"
                                value="Shortness of breath">
-                        <label for="roundtrip2">Shortness of breath</label>
+                        <label for="roundtrip2" data-i18n="symptoms.shortBreath"></label>
 
                         <br>
                         <input class="sym-checkbox" type="checkbox" id="roundtrip3" name="reported_symptoms3"
                                value="Fever, chills, or sweating">
-                        <label for="roundtrip3"> Fever, chills, or sweating</label>
+                        <label for="roundtrip3" data-i18n="symptoms.fever"></label>
                         <br>
 
                         <input class="sym-checkbox" type="checkbox" id="roundtrip4" name="reported_symptoms4"
                                value="Sore throat">
-                        <label for="roundtrip4">Sore throat</label>
+                        <label for="roundtrip4" data-i18n="symptoms.soreThroat"></label>
                         <br>
 
                         <input class="sym-checkbox" type="checkbox" id="roundtrip5" name="reported_symptoms5"
                                value="Body aches">
-                        <label for="roundtrip5">Body aches</label>
+                        <label for="roundtrip5" data-i18n="symptoms.aches"></label>
 
                         <br>
 
                         <input class="sym-checkbox" type="checkbox" id="roundtrip7" name="reported_symptoms7"
                                value="Loss of taste">
-                        <label for="roundtrip7">Loss of taste</label>
+                        <label for="roundtrip7" data-i18n="symptoms.lossOfTaste"></label>
                         <br>
 
                         <input class="sym-checkbox" type="checkbox" id="roundtrip8" name="reported_symptoms8"
@@ -463,6 +459,13 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
+	<!-- internationalization -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/8.1.0/i18next.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.0/jquery-i18next.min.js" ></script>
+	<script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>
+	<script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+	<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+	<script src="assets/js/i18n.js"></script>
 	<script>
 
         $('#sym-checkbox-wrapper .sym-checkbox').on('change', function () {
