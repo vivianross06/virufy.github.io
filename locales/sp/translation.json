@@ -14,9 +14,8 @@
     },
     "languageToggle": {
         "en": "English",
-        "jp": "日本語",
-        "pt": "Português",
-        "sp": "Español"
+        "jp": "Japanese",
+        "pt": "Portuguese"
     },
     "appBanner": {
         "title": "Virufy COVID-19 (Beta)"
