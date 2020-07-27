@@ -2936,13 +2936,6 @@ button:disabled,
 	font-size: 1em;
 }
 
-@media screen and (min-width: 1021px) and (max-width: 1160px){
-	nav {
-		width: 85%;
-		float: right;
-	}
-}
-
 #header a:hover {
 	color: #ffffff;
 }
@@ -2994,6 +2987,25 @@ button:disabled,
 }
 
 /* Nav */
+
+#nav {
+	width: 95%;
+	float: right;
+}
+
+@media screen and (max-width: 1160px){
+	#nav {
+		width: 80%;
+		float: right;
+	}
+}
+
+@media screen and (max-width: 1085px){
+	#nav {
+		width: 90%;
+		float: right;
+	}
+}
 
 @media screen and (max-width: 980px) {
 	#nav {
