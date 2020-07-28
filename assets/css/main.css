@@ -2989,20 +2989,27 @@ button:disabled,
 /* Nav */
 
 #nav {
-	width: 95%;
+	width: 90%;
 	float: right;
 }
 
-@media screen and (max-width: 1160px){
+@media screen and (max-width: 1270px){
 	#nav {
 		width: 80%;
 		float: right;
 	}
 }
 
-@media screen and (max-width: 1085px){
+@media screen and (max-width: 1210px){
 	#nav {
 		width: 90%;
+		float: right;
+	}
+}
+
+@media screen and (max-width: 1085px){
+	#nav {
+		width: 85%;
 		float: right;
 	}
 }
