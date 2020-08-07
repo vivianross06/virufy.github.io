@@ -34,6 +34,9 @@
 	<!-- Favicon -->
 	<link rel="icon" href="./images/logo2.png" type="image/x-icon" />
 
+	<!-- Cookie banner -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165690517-1"></script>
 <script>
@@ -276,5 +279,20 @@
 	<script src="assets/js/main.js"></script>
 	<script defer src="https://www.gofundme.com/static/js/embed.js"></script>
 	<script src="assets/js/email.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+	<script>
+		window.cookieconsent.initialise({
+			"palette": {
+				"popup": {
+					"background": "#1d8a8a"
+				},
+				"button": {
+					"background": "#62ffaa"
+				}
+			}
+		});
+	</script>
+
 </body>
 </html>
